@@ -10,12 +10,15 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.util.zip.GZIPInputStream;
 
+import com.amazonaws.services.s3.AmazonS3Client;
+
+
 public class WARCReadTest {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		AmazonS3Client s3 = new AmaozonS3Client();
+		AmazonS3Client s3 = new AmazonS3Client();
 		String s3domain= "s3://aws-publicdatasets";
 		
 		InputStream fn = new FileInputStream("s3://commoncrawloutput/wat.list.gz");
