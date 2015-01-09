@@ -15,6 +15,7 @@ public class WARCReadTest {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
+		AmazonS3Client s3 = new AmaozonS3Client();
 		String s3domain= "s3://aws-publicdatasets";
 		
 		InputStream fn = new FileInputStream("s3://commoncrawloutput/wat.list.gz");
