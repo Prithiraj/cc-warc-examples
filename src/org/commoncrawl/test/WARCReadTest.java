@@ -21,7 +21,7 @@ public class WARCReadTest {
 		//AmazonS3Client s3 = new AmazonS3Client();
 		//String s3domain= "s3://aws-publicdatasets";
 		
-		InputStream fn = new FileInputStream("lib/wat.list.gz");
+		InputStream fn = new FileInputStream("/lib/wat.list.gz");
 		GZIPInputStream gis = new GZIPInputStream(fn);
 		InputStreamReader r = new InputStreamReader(gis);// gis = new GZIPInputStream(fn);
 		
