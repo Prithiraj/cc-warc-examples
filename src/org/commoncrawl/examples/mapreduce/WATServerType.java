@@ -6,15 +6,20 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.JobContext;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.mapreduce.lib.reduce.LongSumReducer;
+import org.apache.hadoop.security.Credentials;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 import org.apache.log4j.Logger;
 import org.commoncrawl.warc.WARCFileInputFormat;
+import org.mortbay.jetty.security.Credential;
+
+import ch.qos.logback.core.subst.Token;
 
 /**
  * Server count example using the response metadata (WAT) from the Common Crawl dataset.
@@ -37,8 +42,11 @@ public class WATServerType extends Configured implements Tool {
 	 * @return	0 if the Hadoop job completes successfully and 1 otherwise.
 	 */
 	@Override
-	public int run(String[] arg0) throws Exception {
+	public int run(String[] args) throws Exception {
 		Configuration conf = getConf();
+		conf.set("fs.s3.impl", "org.apache.hadoop.fs.s3native.NativeS3FileSystem");
+		conf.set("fs.s3.awsAccessKeyId",args[0]);
+		conf.set("fs.s3.awsSecretAccessKey",args[1]);
 		//
 		Job job = new Job(conf);
 		job.setJarByClass(WATServerType.class);
