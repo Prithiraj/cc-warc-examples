@@ -64,11 +64,12 @@
       <version>1.1.2</version>
     </dependency>
     
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-core</artifactId>
-      <version>0.23.0-mr1-cdh4b1</version>
-    </dependency>
+   <dependency>
+	<groupId>org.apache.hadoop</groupId>
+	<artifactId>hadoop-core</artifactId>
+	<version>1.2.1</version>
+</dependency>
+
   </dependencies>
 
   <build>
