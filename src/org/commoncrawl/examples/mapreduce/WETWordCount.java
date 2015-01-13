@@ -43,7 +43,7 @@ public class WETWordCount extends Configured implements Tool {
 		Job job = new Job(conf);
 		job.setJarByClass(WETWordCount.class);
 		job.setNumReduceTasks(1);
-		
+
 		String inputPath = "data/*.warc.wet.gz";
 		//inputPath = "s3n://aws-publicdatasets/common-crawl/crawl-data/CC-MAIN-2013-48/segments/1386163035819/wet/CC-MAIN-20131204131715-00000-ip-10-33-133-15.ec2.internal.warc.wet.gz";
 		//inputPath = "s3n://aws-publicdatasets/common-crawl/crawl-data/CC-MAIN-2013-48/segments/1386163035819/wet/*.warc.wet.gz";

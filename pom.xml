@@ -65,17 +65,10 @@
     </dependency>
     
     <dependency>
-	<groupId>org.apache.hadoop</groupId>
-	<artifactId>hadoop-mapreduce-client-core</artifactId>
-	<version>2.4.0</version>
-</dependency>
-    
-    <dependency>
-	<groupId>org.apache.hadoop</groupId>
-	<artifactId>hadoop-client</artifactId>
-	<version>2.4.0</version>
-</dependency>
-    
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-core</artifactId>
+      <version>0.20.2-cdh3u4</version>
+    </dependency>
   </dependencies>
 
   <build>
