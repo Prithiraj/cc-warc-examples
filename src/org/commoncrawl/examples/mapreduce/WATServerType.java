@@ -44,7 +44,7 @@ public class WATServerType extends Configured implements Tool {
 	@Override
 	public int run(String[] args) throws Exception {
 		Configuration conf = getConf();
-		conf.set("fs.s3.impl", "org.apache.hadoop.fs.s3native.NativeS3FileSystem");
+		
 		conf.set("fs.s3.awsAccessKeyId",args[0]);
 		conf.set("fs.s3.awsSecretAccessKey",args[1]);
 		//
