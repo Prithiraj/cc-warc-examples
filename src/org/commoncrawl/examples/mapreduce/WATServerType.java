@@ -59,7 +59,7 @@ public class WATServerType extends Configured implements Tool {
 		if (fs.exists(new Path(outputPath))) {
 			fs.delete(new Path(outputPath), true);
 		}*/
-		FileOutputFormat.setOutputPath(job, new Path(outputPath));
+		//FileOutputFormat.setOutputPath(job, new Path(outputPath));
 		
 		job.setInputFormatClass(WARCFileInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
