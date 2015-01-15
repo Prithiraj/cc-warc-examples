@@ -54,12 +54,12 @@ public class WATServerType extends Configured implements Tool {
 		LOG.info("Input path: " + inputPath);
 		FileInputFormat.addInputPath(job, new Path(inputPath));
 		
-		/*String outputPath = "/tmp/cc/";
+		String outputPath = "/tmp/cc/";
 		FileSystem fs = FileSystem.newInstance(conf);
 		if (fs.exists(new Path(outputPath))) {
 			fs.delete(new Path(outputPath), true);
-		}*/
-		//FileOutputFormat.setOutputPath(job, new Path(outputPath));
+		}
+		FileOutputFormat.setOutputPath(job, new Path(outputPath));
 		
 		job.setInputFormatClass(WARCFileInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
