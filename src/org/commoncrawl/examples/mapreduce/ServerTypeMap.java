@@ -6,6 +6,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Mapper.Context;
 import org.apache.log4j.Logger;
 import org.archive.io.ArchiveReader;
 import org.archive.io.ArchiveRecord;
@@ -24,7 +25,6 @@ public class ServerTypeMap {
 		private Text outKey = new Text();
 		private LongWritable outVal = new LongWritable(1);
 
-		@Override
 		public void map(Text key, ArchiveReader value, Context context) throws IOException {
 			for (ArchiveRecord r : value) {
 				// Skip any records that are not JSON
